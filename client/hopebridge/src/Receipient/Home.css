@@ -1,0 +1,75 @@
+.header-links {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+.header-links li a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  padding-top: 20px;
+  margin-left: 80px;
+}
+.header-links li a:hover {
+  background-color: aliceblue;
+  border-radius: 30px;
+  width: 100px;
+}
+.head {
+  background-color: #ffef9f;
+}
+.sidebars {
+  width: 250px;
+  height: 100vh;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  color: white;
+  z-index: 1000;
+}
+.sidebars-brand {
+  font-weight: bolder;
+  font-size: 2rem;
+  color: #f7c02b;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-right: 10px;
+}
+.sidebars ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 50px;
+}
+.sidebars ul li {
+  padding: 15px 20px;
+}
+.sidebars ul li a {
+  color: #f7c02b;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.sidebars ul li a:hover {
+  color: #d4d700;
+}
+.sidebars ul li:hover {
+  background-color: #444;
+}
+
+/* Main content styling */
+.main-content {
+  margin-left: 250px; /* Same width as the sidebar */
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+/* Adjusting the chart container spacing */
+.chart-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}

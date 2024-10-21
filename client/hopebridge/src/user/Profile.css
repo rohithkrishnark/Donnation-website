@@ -1,0 +1,75 @@
+/* Profile Page */
+.profile-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    padding: 20px;
+}
+
+/* Profile Banner */
+.profile-banner {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Card */
+.profile-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Image Container */
+.profile-image-container {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.profile-image {
+    border-radius: 50%;
+    border: 4px solid #ff7e5f;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+/* Profile Details */
+.profile-details {
+    flex-grow: 1;
+}
+
+.profile-name {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.profile-email,
+.profile-phone,
+.profile-address {
+    font-size: 1em;
+    margin-bottom: 8px;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-image-container {
+        margin-bottom: 15px;
+    }
+}
