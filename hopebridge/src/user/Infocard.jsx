@@ -26,7 +26,7 @@ const InfoCards = () => {
     return (
         <div className="info-cards-container">
             {cardData.map((card, index) => (
-                <div key={index} className="info-card">
+                <div key={index} className="info-card ">
                     <div className="icon">{card.icon}</div>
                     <h3 className="title">{card.title}</h3>
                     <p className="description">{card.description}</p>

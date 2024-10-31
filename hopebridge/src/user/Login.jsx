@@ -7,11 +7,13 @@ function Login() {
     const[password,setPassword]=useState('')
     const navigate=useNavigate()
     const loginform=(event)=>{
+        console.log("workign");
+        
         let params={
             email:email,
             password:password
         }
-        fetch('http://localhost:4000/recepient/recepientlogin',{
+        fetch('http://localhost:4000/main/lform',{
             method:'post',
             headers:{
                 Accept:'application/json',
@@ -22,8 +24,9 @@ function Login() {
             if(result.success===true){
                 localStorage.setItem('User',JSON.stringify(result.data))
                 console.log(result);
-                navigate('/')
-                window.location.reload()
+                setTimeout(() => {
+                    navigate('/')
+                }, 2000);
             }else{
                 alert("invalid credentials")
             }

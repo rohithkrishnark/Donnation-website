@@ -38,8 +38,8 @@ function Donate() {
                         </div>
                     </div>
                     {/* donnnation card goes here */}
-                    <div className="col-xl-5 py-3 d-flex justify-content-center position-relative">
-                        <div style={{ width: "80%", height: 400, top: 10 }} className="shadow rounded position-sticky">
+                    <div className="col-xl-5  py-3 d-flex justify-content-center position-relative">
+                        <div style={{ width: "80%", height: 400, top: 10 }} className="shadow rounded position-sticky box">
                             <div style={{ width: "100%", height: 80 }} className="  d-flex flex-column align-items-center ">
                                 <h4 className="text mb-0 ">Help Us Bring Hope</h4>
                                 <p className="text2 mt-0 text-center">Every contribution counts towards a brighter future for those facing hardship🌟</p>
