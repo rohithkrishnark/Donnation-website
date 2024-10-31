@@ -44,6 +44,7 @@ import Adminsidebar from './Admin/Adminsidebar';
 import Adminheader from './Admin/Adminheader';
 import Profile from './user/Profile';
 import DonationTracking from './Receipient/DonnationTracking';
+import DonnationApproval from './Admin/pages/DonnationApproval';
 
 
 function App() {
@@ -96,6 +97,7 @@ function App() {
    <Route path='/admin' element={<Adminhome/>}/>
    <Route path='/adminsidebar' element={<Adminsidebar/>}/>
    <Route path='/adminheader' element={<Adminheader/>}/>
+   <Route path='/approval' element={<DonnationApproval/>}/>
 
 
 

@@ -42,7 +42,7 @@ var userschema=mongoose.Schema({
     },
     recepient_id:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'receipientlogins',
+        ref:'ReceipientLogin',
         required:true
     },
     approval:{

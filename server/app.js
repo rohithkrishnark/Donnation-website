@@ -28,9 +28,11 @@ database()
 var firstrouter= require("./router/Main.router")
 var secondrouter=require("./router/Receipient.router")
 var paymentrouter = require("./router/CommonPayment")
+var adminrouter = require('./router/Admin.router')
 app.use('/main',firstrouter)
 app.use('/recepient',secondrouter)
 app.use('/transaction',paymentrouter)
+app.use('/admin',adminrouter)
 
 
 const PORT = 4000

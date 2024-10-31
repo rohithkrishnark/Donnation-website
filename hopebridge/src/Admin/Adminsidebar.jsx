@@ -11,11 +11,11 @@ function Adminsidebar() {
         </div>
         <ul>
           <li><Link to="/admin">Home</Link></li>
-          <li><Link to="/notifications">Manage Recepient </Link></li>
-          <li><Link to="/totalsubmission"> Reports and Analytics</Link></li>
-          <li><Link to="/donnationrequest">Donation Approvals</Link></li>
-          <li><Link to="/view">Payment Tracking</Link></li>
-          <li><Link to="/">Notifications</Link></li>
+          <li><Link to="">Manage Recepient </Link></li>
+          <li><Link to=""> Reports and Analytics</Link></li>
+          <li><Link to="/approval">Donation Approvals</Link></li>
+          <li><Link to="">Payment Tracking</Link></li>
+          <li><Link to="">Notifications</Link></li>
 
         </ul>
       </div>

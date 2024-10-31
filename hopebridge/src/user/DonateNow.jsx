@@ -5,6 +5,8 @@ import './Donate.css';
 import Swipercomponent from "./Swiper";
 import InfoCards from "./Infocard";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const DonnateAmount = ({ amount, onClick }) => {
     return (
@@ -25,6 +27,13 @@ function Donate() {
     }
     const navigate = useNavigate()
     const handleConfirmBooking = async () => {
+        if (isNaN(donnationamount) || donnationamount.trim() === "" || Number(donnationamount) <= 0) {
+            toast.error("Please enter a valid number.", {
+                autoClose: 1000, 
+            });
+            setDonnationAmount("")
+            return
+        }
         try {
             const response = await fetch("http://localhost:4000/transaction/api/payment", {
                 method: 'POST',
@@ -145,6 +154,7 @@ function Donate() {
                 </div>
             </div>
             <Footer />
+            <ToastContainer />
         </>
     );
 }
