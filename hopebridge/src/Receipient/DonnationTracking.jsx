@@ -76,9 +76,9 @@ function DonationTracking() {
             <h5 className="donation-title text-dark mt-2" style={{fontFamily:"revert-layer"}}>Approved by Admin💖🥰</h5>
             
             {/* Education Section */}
+             {education &&  <h6 className="text-dark">Education Donations</h6>}
             <div className="donation-container mt-4">
-              <h6 className="text-dark">Education Donations</h6>
-              <div className="row">
+              <div className="row  w-100">
                 {education
                   .filter((recipient) => recipient.approval === 1)
                   .map((recipient) => {
@@ -101,7 +101,7 @@ function DonationTracking() {
                       }
 
                     return (
-                      <div className="col-xl-3 py-2" style={{ height: 410 }} key={recipient._id}>
+                      <div className="col-xl-3 py-2" style={{ height: 410}} key={recipient._id}>
                         <div className="card w-100 border shadow px-1 py-1 rounded" style={{ height: '99%' }}>
                           <div style={{ width: '100%', height: 200 }}>
                             <img src={`http://localhost:4000/${recipient.file}` || "/poor.jpg"}
@@ -144,9 +144,9 @@ function DonationTracking() {
             </div>
 
             {/* Dress Data Section */}
-            <div className="donation-container mt-4">
               <h6 className="text-dark">Dress Donations</h6>
-              <div className="row">
+            <div className="donation-container mt-4">
+              <div className="row   w-100">
                 {dressdata && dressdata
                   .filter((dress) => dress.approval === 1) 
                   .map((dress) => {
@@ -169,7 +169,7 @@ function DonationTracking() {
                     }
 
                     return (
-                      <div className="col-xl-3 py-2" style={{ height: 410 }} key={dress._id}>
+                      <div className="col-xl-3  py-2" style={{ height: 410 }} key={dress._id}>
                         <div className="card w-100 border shadow px-1 py-1 rounded" style={{ height: '99%' }}>
                           <div style={{ width: '100%', height: 200 }}>
                             <img src={`http://localhost:4000/${dress.file}` || "/default-dress.jpg"} 
