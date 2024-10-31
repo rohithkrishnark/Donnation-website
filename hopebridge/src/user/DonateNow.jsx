@@ -1,97 +1,56 @@
 import React from "react";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 import './Donate.css';
-import Footer from "./Footer"
 
 function Donate() {
     return (
         <>
             <Navbar />
-            <div className="">
-                <img src="gallery/difference.jpg" alt="Hopebridge Banner" className="banner-image" style={{ height: "300px" }} />
-            </div>
-            <div className=" row" style={{width:"100vw", minHeight:"1000px"}}>
-                <div className="col-xl-7 bg-primary"></div>
-                <div className="col-xl-5 row overflow position-sticky mt-4 mb-4 ps-4" >
-                <div className="">
-                        <div className="payment-form-container" style={{ bottom: "20px" }}>
-                            <h2>Make a Donation</h2>
-                            <form>
-                                <div className="form-group">
-                                    <label htmlFor="name">Full Name:</label>
-                                    <input type="text" id="name" name="name" required />
+            <div className="" style={{ width: "100%", minHeight: '90vh' }}>
+                <div className="row  py-2 donation-banner" style={{ height: '480px', width: '100%' }}>
+                    <div className="col-xl-8">
+
+                    </div>
+                    <div className="col-xl-4 h-100 ">
+                        <div className="donation-form-container">
+                            <div className="donation-form shadow rounded px-2"style={{height:'460px'}}>
+                                <div className="donation-buttons">
+                                    <button className="donation-type active">Give Once</button>
+                                    <button className="donation-type">Give Monthly</button>
                                 </div>
 
-                                <div className="form-group">
-                                    <label htmlFor="email">Email:</label>
-                                    <input type="email" id="email" name="email" required />
+                                <p className="donation-text mt-0 mb-0">
+                                    Please select your donation amount <br />
+                                    (*1 Meal = ₹ 25)
+                                </p>
+                                <div className="amount-options mb-0">
+                                    <div className="bttn border">₹50000</div>
+                                    <div className="bttn">₹50000</div>
+                                    <div className="bttn">₹50000</div>
+                                    <div className="bttn">₹50000</div>
+                                   
                                 </div>
+                                <input className="custom-amount mb-0 mt-0" type="text" placeholder="Enter amount" />
+                                <p className="pledge-text">You pledge to serve <span>0</span> nutritious meals.</p>
 
-                                <div className="form-group">
-                                    <label htmlFor="amount">Donation Amount:</label>
-                                    <input type="number" id="amount" name="amount" required />
+                                <div className="payment-options mb-0">
+                                    {/* Payment logos */}
+                                    <img src="visa.png" alt="Visa" />
+                                    <img src="mastercard.png" alt="Mastercard" />
+                                    <img src="rupay.png" alt="Rupay" />
+                                    <img src="paytm.png" alt="Paytm" />
+                                    <img src="gpay.png" alt="GPay" />
+                                    <img src="upi.png" alt="UPI" />
                                 </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="payment-method">Payment Method:</label>
-                                    <select id="payment-method" name="payment-method">
-                                        <option value="credit-card">Credit Card</option>
-                                        <option value="debit-card">Debit Card</option>
-                                        <option value="paypal">PayPal</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <img src="gallery/payment-icons.webp" alt="no image" style={{ marginLeft: "2px" }} />
-                                </div>
-
-                                <button type="submit" className="donate-button">Donate Now</button>
-                            </form>
+                                <button className="donate-button mb-0">Proceed to Donate</button>
+                                <p className="tax-text mt-0 mb-0">Donations are tax-exempted under 80G </p>
+                                <p className="text-center mt-0">For Bank Transactions <a href="#">Click Here</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {/* <div>
-                <div className="d-flex  row" style={{ width: "100vw", height: "900px", backgroundColor: "green" }}>
-                    <div className="">
-                        <div style={{ width: "100px", backgroundColor: "pink" }}>ded</div>
-                    </div>
-                    <div className="">
-                        <div className="payment-form-container" style={{ bottom: "20px" }}>
-                            <h2>Make a Donation</h2>
-                            <form>
-                                <div className="form-group">
-                                    <label htmlFor="name">Full Name:</label>
-                                    <input type="text" id="name" name="name" required />
-                                </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="email">Email:</label>
-                                    <input type="email" id="email" name="email" required />
-                                </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="amount">Donation Amount:</label>
-                                    <input type="number" id="amount" name="amount" required />
-                                </div>
-
-                                <div className="form-group">
-                                    <label htmlFor="payment-method">Payment Method:</label>
-                                    <select id="payment-method" name="payment-method">
-                                        <option value="credit-card">Credit Card</option>
-                                        <option value="debit-card">Debit Card</option>
-                                        <option value="paypal">PayPal</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <img src="gallery/payment-icons.webp" alt="no image" style={{ marginLeft: "2px" }} />
-                                </div>
-
-                                <button type="submit" className="donate-button">Donate Now</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
 
             <Footer />
         </>
@@ -99,3 +58,4 @@ function Donate() {
 }
 
 export default Donate;
+
