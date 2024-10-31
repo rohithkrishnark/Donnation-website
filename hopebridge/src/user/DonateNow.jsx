@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import './Donate.css';
 import Swipercomponent from "./Swiper";
 import InfoCards from "./Infocard";
+import { useNavigate } from "react-router-dom";
 
 const DonnateAmount = ({ amount, onClick }) => {
     return (
@@ -15,9 +16,80 @@ const DonnateAmount = ({ amount, onClick }) => {
 }
 function Donate() {
     const [donnationamount, setDonnationAmount] = useState("")
+    const [user, setUser] = useState(() => JSON.parse(localStorage.getItem('User')));
+    console.log(user);
+    
+
     const handleClick = (amount) => {
         setDonnationAmount(amount)
     }
+    const navigate = useNavigate()
+    const handleConfirmBooking = async () => {
+        try {
+            const response = await fetch("http://localhost:4000/transaction/api/payment", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    amount: donnationamount * 100
+                })
+            });
+    
+            if (!response.ok) {
+                throw new Error("Failed to create order");
+            }
+    
+            const orderData = await response.json();
+            const { amount, id: order_id, currency } = orderData;
+    
+            if (!amount) {
+                throw new Error('Invalid amount received');
+            }
+    
+            const options = {
+                key: "rzp_test_4Ex6Tyjkp79GFy",
+                amount: (amount * 100).toString(),
+                currency: currency,
+                name: "Archana Anil",
+                description: "Test Transaction",
+                order_id: order_id,
+                handler: async (response) => {
+                    const paymentVerification = await fetch("http://localhost:4000/transaction/api/paymentVerification", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            razorpayPaymentId: response.razorpay_payment_id,
+                            razorpayOrderId: response.razorpay_order_id,
+                            razorpaySignature: response.razorpay_signature,
+                            amount: amount,
+                            currency: currency,
+                            userId: user ? user._id : null
+                        }),
+                    });
+                    const paymentVerificationData = await paymentVerification.json();
+                    console.log(paymentVerificationData);
+                    
+                    if (paymentVerificationData.success) {
+                        alert("Payment successful");
+                        setTimeout(() => {
+                            navigate('/')
+                        }, 3000);
+                    } else {
+                        alert("Payment verification failed");
+                    }
+                }
+            };
+            const paymentObject = new window.Razorpay(options);
+            paymentObject.open();
+        } catch (error) {
+            console.error('Error during payment process:', error);
+            alert('An error occurred during the payment process. Please try again.');
+        }
+    };
+    
     return (
         <>
             <Navbar />
@@ -53,14 +125,14 @@ function Donate() {
                                 <input type="text" className="form-control mb-0 shadow" onChange={(e) => setDonnationAmount(e.target.value)} placeholder="Enter the amount you are willing to pay" value={donnationamount} style={{ height: 50 }} />
                             </div>
                             <div style={{ width: "100%", height: 120 }} className=" flex-column gap-2 d-flex align-items-center justify-content-center px-2 ">
-                                <div className="btn btn-outline-success w-100 text3">Procced to Payment</div>
+                                <div className="btn btn-outline-success w-100 text3" onClick={handleConfirmBooking}>Procced to Payment</div>
                                 <p className="text3 mt-0 ">Your kindness today brings hope to those who need it most</p>
                                 <div style={{ width: "80%", height: 45 }} className="  gap-2 d-flex  px-2 align-items-center justify-content-around">
-                                    <img src="/arrow.webp" alt="UPI Icon 1" style={{ width: 40, height: 40 }} />
+                                    <img className="rounded-circle" src="/arrow.webp" alt="UPI Icon 1" style={{ width: 40, height: 40 }} />
                                     <img src="/gpay.png" alt="UPI Icon 2" style={{ width: 30, height: 30 }} />
-                                    <img src="/phone.png" alt="UPI Icon 3" style={{ width: 60, height: 30 }} />
-                                    <img src="/pytm.png" alt="UPI Icon 4" style={{ width: 30, height: 30 }} />
-                                    <img src="/amazon.png" alt="UPI Icon 4" style={{ width: 30, height: 30 }} />
+                                    <img src="/phone.png" alt="UPI Icon 3" style={{ width: 60, height: 35 }} />
+                                    <img src="/pytm.png" alt="UPI Icon 4" style={{ width: 40, height: 40 }} />
+                                    <img src="/amazon.png" alt="UPI Icon 4" style={{ width: 40, height: 40 }} />
                                 </div>
                             </div>
                         </div>

@@ -27,8 +27,11 @@ app.use(session({
 database()
 var firstrouter= require("./router/Main.router")
 var secondrouter=require("./router/Receipient.router")
+var paymentrouter = require("./router/CommonPayment")
 app.use('/main',firstrouter)
 app.use('/recepient',secondrouter)
+app.use('/transaction',paymentrouter)
+
 
 const PORT = 4000
 
