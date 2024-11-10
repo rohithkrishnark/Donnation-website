@@ -27,26 +27,31 @@ function Navbar() {
           <h4 className="texthead text-dark">H<span className="text-warning">o</span>peBridge</h4>
           <img src="/value.gif" alt="UPI Icon 1" style={{ width: 60, height: 60 }} />
         </div>
-        <ul className="navbar-links">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/" state={{ showProjects: true }}>Projects</Link></li>
-
-          <li><Link to="/gallery">Gallery</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
-        </ul>
         <div className="navbar-button">
-          {
-            recepient ? <Link to="/Rhome" className="donate-btn px-2 py-1" style={{ marginRight: "30px" }}>Be Receipient</Link> :
-              <Link to="/recepientlogin" className="donate-btn px-2 py-1" style={{ marginRight: "30px" }}>Be Receipient</Link>
-          }
-          <Link to="/donate" className="donate-btn px-2 py-1" style={{ marginRight: "25px" }}>Donate Now</Link>
+          <ul className="navbar-links">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/gallery">Gallery</Link></li>
+            {
+              recepient ?
+                <Tooltip title="Become a Recepeint🛡️ ">
+                  <li><Link to="/Rhome"  >Be Receipient</Link></li>
+                </Tooltip> :
+                <Tooltip  title="Become a Recepeint 🛡️">
+                  <li><Link to="/recepientlogin" >Be Receipient</Link></li>
+                </Tooltip>
+            }
+            <li><Link to="/donate" className=" me-3" >Donate Now</Link></li>
+            {/* <li><Link to="/contact">Contact Us</Link></li> */}
+          </ul>
+
+
           {
             auth ? (
-             
-                <Tooltip title="Go to Profile Page">
-                  <Avatar onClick={toggleSidebar} alt="Remy Sharp" src="/poor.jpg" style={{ cursor: 'pointer', marginRight: "20px", fontSize: "30px" }} />
-                </Tooltip>
+
+              <Tooltip title="Go to Profile Page">
+                <Avatar onClick={toggleSidebar} alt="Remy Sharp" src="/poor.jpg" style={{ cursor: 'pointer', marginRight: "20px", fontSize: "30px" }} />
+              </Tooltip>
             ) : (
               <Link to='/login' style={{ textDecoration: "none" }}><span style={{ cursor: 'pointer', marginRight: "20px", fontSize: "30px" }}>🙋</span></Link>
             )

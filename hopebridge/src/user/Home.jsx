@@ -28,44 +28,9 @@ function Home() {
   return (
     <>  
       <Navbar />
-      {/* <Carousel fade>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="car1.jpg"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>Empowering Communities</h3>
-            <p>Join us in making a difference, one project at a time.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="car5.jpg"
-            alt="Second slide"
-          />
-          <Carousel.Caption>
-            <h3>Bridging the Gap</h3>
-            <p>Your support brings hope to those in need.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="car3.webp"
-            alt="Third slide"
-          />
-          <Carousel.Caption>
-            <h3>Together We Can</h3>
-            <p>Let's work together to create a brighter future.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel> */}
+    <div style={{width:'98vw',height:'70vh'}}>
       <Carouselcomponent/>
+    </div>
 
       <div className=" d-flex container mt-5">
         <h1>About HopeBridge</h1>

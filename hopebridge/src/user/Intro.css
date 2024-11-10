@@ -1,7 +1,14 @@
 .headers {
     font-size: 44px;
-    font-family: sans-serif;
+    font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: 600;
+    color: #fb8500;
+}
+.header {
+    font-size: 44px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    color: #000000;
 }
 
 .change {
@@ -15,34 +22,31 @@
     margin-top: 22px;
     font-weight: 500;
 }
-
-.sucess {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 700;
-    opacity: 0;
-    transform: translateX(20px); /* Start slightly from the right */
-    animation: fadeInSlide 1s ease-in-out forwards;
+.subpara{
+    font-size: 16px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #023047;
 }
-
-.sucess:nth-child(1) {
-    animation-delay: 0.5s; /* Delay for the first h5 tag */
+.buttons{
+    width: 200px;
+    height: 60px;
+    /* border-color:#fb8500; */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #000000;
+    border: 2px solid  #023047;
+    cursor: pointer;
 }
-
-.sucess:nth-child(2) {
-    animation-delay: 1s; /* Delay for the second h5 tag */
+.buttons:hover{
+    background-color:#fb8500;
 }
-
-.sucess:nth-child(3) {
-    animation-delay: 1.5s; /* Delay for the third h5 tag */
-}
-
-@keyframes fadeInSlide {
-    from {
-        opacity: 0;
-        transform: translateX(20px); /* Slightly from the right */
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0); /* No translation */
-    }
+.arrow{
+    width: '100%';
+    height: 30px;
+    border-radius: 12px;
+    text-align: center;
 }
