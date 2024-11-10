@@ -6,7 +6,7 @@ body {
   }
   
   .navbar {
-    background-color: #333;
+    background-color: #ffffff;
     padding: 10px 20px; 
     display: flex;
     justify-content: space-between;
@@ -29,7 +29,7 @@ body {
   }
   
   .navbar-links li a {
-    color: white;
+    color: rgb(10, 10, 10);
     text-decoration: none;
     font-size: 1em;
   }
@@ -57,4 +57,13 @@ body {
     color: white;
     transition: background-color 0.3s ease-in-out;
   }
-  
+  .texthead{
+    font-size: 26px;
+    margin-left: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.navbar-button {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust space between donate button and avatar */
+}

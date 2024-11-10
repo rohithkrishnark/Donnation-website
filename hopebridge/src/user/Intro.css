@@ -1,0 +1,48 @@
+.headers {
+    font-size: 44px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.change {
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.custom {
+    border: 2px solid black;
+    margin-top: 22px;
+    font-weight: 500;
+}
+
+.sucess {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateX(20px); /* Start slightly from the right */
+    animation: fadeInSlide 1s ease-in-out forwards;
+}
+
+.sucess:nth-child(1) {
+    animation-delay: 0.5s; /* Delay for the first h5 tag */
+}
+
+.sucess:nth-child(2) {
+    animation-delay: 1s; /* Delay for the second h5 tag */
+}
+
+.sucess:nth-child(3) {
+    animation-delay: 1.5s; /* Delay for the third h5 tag */
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateX(20px); /* Slightly from the right */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* No translation */
+    }
+}
