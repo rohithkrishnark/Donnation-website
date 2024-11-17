@@ -1,7 +1,9 @@
 var{user}= require("../model/first.model")
 var{Register,Logindata}=require("../model/second.model")
 var {Receipient}=require("../model/third.model")
-const fs = require('fs');
+var { Receipient } = require('../model/third.model')
+
+
 const path = require('path');
 exports.Cform=async(req,res)=>{
     try{
@@ -233,3 +235,13 @@ exports.Dform = async (req, res) => {
 };
 
 
+exports.findAllEducation = async(req,res) =>{
+  try{
+    let data = await Receipient.find({approval:1});
+    return res.statu(200).json(data)
+  }catch(err){
+    console.log(err);
+    
+  }
+
+}

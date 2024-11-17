@@ -8,6 +8,9 @@ router.post('/lform',firstcontroller.sessions)
 router.post('/dform',firstcontroller.Dform)
 
 
+router.post('/findalleducation'.firstcontroller.findAllEducation)
+
+
 
 
 

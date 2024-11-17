@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import Footer from "./Footer";
 import { useNavigate, useLocation } from "react-router-dom";
 import Carouselcomponent from "./Carouselcomponent";
+import FIlter from "./FIlter";
 function Home() {
   const cardsData = [
     { img: "/card1.webp", title: "Support Education", path: "/donate" },
@@ -32,6 +33,9 @@ function Home() {
       <Carouselcomponent/>
     </div>
 
+    <div className="ms-5">
+      <FIlter/>
+    </div>
       <div className=" d-flex container mt-5">
         <h1>About HopeBridge</h1>
         <div style={{ textAlign: "justify", marginLeft: "20px" }}>

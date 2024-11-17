@@ -16,14 +16,6 @@ function Adminheader() {
       <Navbar.Collapse id="basic-navbar-nav" style={{marginRight:"30px",}} >
         <Nav style={{marginRight:"10px",}} >
           <h3 className="px-5"style={{right:"10px",marginLeft:"450px",color:"#f7c02b"}}> Admin Dashboard</h3>
-
-       
-
-          
-
-
-
-          
         </Nav>
       </Navbar.Collapse>
    

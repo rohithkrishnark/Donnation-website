@@ -37,7 +37,7 @@ function Navbar() {
                 <Tooltip title="Become a Recepeint🛡️ ">
                   <li><Link to="/Rhome"  >Be Receipient</Link></li>
                 </Tooltip> :
-                <Tooltip  title="Become a Recepeint 🛡️">
+                <Tooltip  title="Become a Recepeint                                   🛡️">
                   <li><Link to="/recepientlogin" >Be Receipient</Link></li>
                 </Tooltip>
             }
